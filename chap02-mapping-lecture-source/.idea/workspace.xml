@@ -15,29 +15,48 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ct3zKZfOaEV1YoMnhaauenXcDM" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.ColumnMappingTests.컬럼에서_사용하는_속성_테스트.executor": "Run",
+    "Gradle.EmbeddedTests.임베디드_아이디를_사용한_복합키_테이블_매핑_테스트.executor": "Run",
     "Gradle.EntityMappingTests.executor": "Run",
     "Gradle.EntityMappingTests.테이블_만들기_테스트.executor": "Run",
+    "Gradle.EnumTypeMappingTests.enum타입_매핑_테스트.executor": "Run",
+    "Gradle.EnumTypeMappingTests.executor": "Run",
+    "Gradle.IdClassTests.아이디_클래스_사용한_복합키_테이블_매핑_테스트.executor": "Run",
+    "Gradle.PrimaryKeyMappingTests.executor": "Run",
+    "Gradle.PrimaryKeyMappingTests.식별자_매핑_테스트.executor": "Run",
+    "Gradle.SequenceTableMappingTests.식별자_매핑_테스트.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/lecture/08_jpa/chap01-persistence-context-lecture-source",
+    "last_opened_file_path": "C:/lecture/08_jpa/chap02-mapping-lecture-source",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,6 +71,10 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ohgiraffers.section05.subsection02.idclass" />
+      <recent name="com.ohgiraffers.section05.subsection01.embedded" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\lecture\08_jpa\chap02-mapping-lecture-source\src\main\resources" />
       <recent name="C:\lecture\08_jpa\chap02-mapping-lecture-source\src\test\resources" />
@@ -59,9 +82,13 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\lecture\08_jpa\chap02-mapping-lecture-source\src\test\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ohgiraffers.section03.primarykey.subsection02.table" />
+      <recent name="com.ohgiraffers.section03.primarykey.subsection01.identity" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.EntityMappingTests">
-    <configuration name="EntityMappingTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.IdClassTests.아이디_클래스_사용한_복합키_테이블_매핑_테스트">
+    <configuration name="EmbeddedTests.임베디드_아이디를_사용한_복합키_테이블_매핑_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -74,7 +101,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section01.entity.EntityMappingTests&quot;" />
+            <option value="&quot;com.ohgiraffers.section05.subsection01.embedded.EmbeddedTests.임베디드_아이디를_사용한_복합키_테이블_매핑_테스트&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -85,7 +112,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EntityMappingTests.테이블_만들기_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EnumTypeMappingTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -98,7 +125,79 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section01.entity.EntityMappingTests.테이블_만들기_테스트&quot;" />
+            <option value="&quot;com.ohgiraffers.section04.enumtype.EnumTypeMappingTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EnumTypeMappingTests.enum타입_매핑_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ohgiraffers.section04.enumtype.EnumTypeMappingTests.enum타입_매핑_테스트&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="IdClassTests.아이디_클래스_사용한_복합키_테이블_매핑_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ohgiraffers.section05.subsection02.idclass.IdClassTests.아이디_클래스_사용한_복합키_테이블_매핑_테스트&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SequenceTableMappingTests.식별자_매핑_테스트" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ohgiraffers.section03.primarykey.subsection02.table.SequenceTableMappingTests.식별자_매핑_테스트&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -111,8 +210,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.EntityMappingTests" />
-        <item itemvalue="Gradle.EntityMappingTests.테이블_만들기_테스트" />
+        <item itemvalue="Gradle.IdClassTests.아이디_클래스_사용한_복합키_테이블_매핑_테스트" />
+        <item itemvalue="Gradle.EmbeddedTests.임베디드_아이디를_사용한_복합키_테이블_매핑_테스트" />
+        <item itemvalue="Gradle.EnumTypeMappingTests" />
+        <item itemvalue="Gradle.EnumTypeMappingTests.enum타입_매핑_테스트" />
+        <item itemvalue="Gradle.SequenceTableMappingTests.식별자_매핑_테스트" />
       </list>
     </recent_temporary>
   </component>
@@ -132,6 +234,9 @@
       <option name="presentableId" value="Default" />
       <updated>1708917310228</updated>
       <workItem from="1708917311293" duration="4744000" />
+      <workItem from="1708935273368" duration="19000" />
+      <workItem from="1708992016883" duration="163000" />
+      <workItem from="1708994121057" duration="10173000" />
     </task>
     <servers />
   </component>
