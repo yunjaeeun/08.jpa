@@ -1,10 +1,7 @@
 package com.ohgiraffers.springdatajpa.menu.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 /* 필기. 엔티티는 DB에서 넘어온 값을 담는 용도 */
 @Entity
@@ -12,6 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Setter
 @ToString
 public class Menu {
 

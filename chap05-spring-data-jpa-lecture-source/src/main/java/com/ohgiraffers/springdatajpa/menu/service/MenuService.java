@@ -1,12 +1,17 @@
 package com.ohgiraffers.springdatajpa.menu.service;
 
+import com.ohgiraffers.springdatajpa.menu.dto.CategoryDTO;
 import com.ohgiraffers.springdatajpa.menu.dto.MenuDTO;
+import com.ohgiraffers.springdatajpa.menu.entity.Category;
 import com.ohgiraffers.springdatajpa.menu.entity.Menu;
 import com.ohgiraffers.springdatajpa.menu.repository.CategoryRepository;
 import com.ohgiraffers.springdatajpa.menu.repository.MenuRepository;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -50,6 +55,54 @@ public class MenuService {
         /* 필기. menuList에 담긴 값을 하나씩 꺼내서 menu를 MenuDTO 타입으로 바꿔 통채로 List에 담아준다. */
         return menuList.stream().map(menu -> mapper.map(menu, MenuDTO.class)).collect(Collectors.toList());
     }
-    
-    
+
+    /* 설명. 3. findAll(페이징 처리 후) */
+    public Page<MenuDTO> findMenuList(Pageable pageable) {
+
+        /* 설명.
+         *  1. 넘어온 pageable에 담긴 페이지 번호를 인덱스 개변으로 바꿔서 인지 시킴
+         *  2. 한 페이지에 뿌려질 데이터 크기
+         *  3. 정렬 기준
+        * */
+        /* 필기. 삼항연산자를 활용해서 음수로 바뀌는것을 막고 인덱스 체계로 변경 */
+        pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() - 1 ,
+                                  pageable.getPageSize(),
+                                  Sort.by("menuCode").descending());
+
+        Page<Menu> menuList = menuRepository.findAll(pageable);
+
+        return menuList.map(menu -> mapper.map(menu, MenuDTO.class));
+    }
+
+    public List<MenuDTO> findMenuPrice(int menuPrice) {
+
+        /* 설명. 전달 받은 가격을 초과하는 메뉴의 목록을 조회하는 메소드 */
+        List<Menu> menuList = menuRepository.findByMenuPriceGreaterThan(menuPrice);
+
+        return menuList.stream().map(menu -> mapper.map(menu, MenuDTO.class)).collect(Collectors.toList());
+    }
+
+    public List<CategoryDTO> findAllCategory() {
+
+        List<Category> categoryList = categoryRepository.findAllCategory();
+
+        return categoryList.stream().map(category -> mapper.map(category, CategoryDTO.class)).collect(Collectors.toList());
+    }
+
+    public void registMenu(MenuDTO newMenu) {
+        menuRepository.save(mapper.map(newMenu, Menu.class));
+    }
+
+    @Transactional                                  // 수정할꺼면 @Transactional 붙여야한다.
+    public void modifyMenu(MenuDTO modifyMenu) {
+
+        Menu foundMenu = menuRepository.findById(modifyMenu.getMenuCode()).orElseThrow(IllegalArgumentException::new);
+        foundMenu.setMenuName(modifyMenu.getMenuName());
+    }
+
+    @Transactional
+    public void deleteMenu(int menuCode) {
+        menuRepository.deleteById(menuCode);
+
+    }
 }

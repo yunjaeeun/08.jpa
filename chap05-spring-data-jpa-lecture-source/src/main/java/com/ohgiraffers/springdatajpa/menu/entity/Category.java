@@ -24,6 +24,6 @@ public class Category {
     @Column(name = "category_name")
     private String categoryName;
 
-    @Column(name = "ref_categroy_code")
+    @Column(name = "ref_category_code")
     private Integer refCategoryCode;
 }
